@@ -1,7 +1,4 @@
-// import { uploadPicture } from "../middlewares/uploadPictureMiddleware";
 import Post from "../models/Post";
-import Comment from "../models/Comment";
-// import { fileRemover } from "../utils/fileRemover.js";
 import { v4 as uuidv4 } from "uuid";
 
 const createPost = async (req, res, next) => {
@@ -47,31 +44,7 @@ const updatePost = async (req, res, next) => {
             const updatedPost = await post.save();
             return res.json(updatedPost);
         };
-        // upload(req, res, async function (err) {
-        //     if (err) {
-        //         const error = new Error(
-        //             "An unknown error occured when uploading " + err.message
-        //         );
-        //         next(error);
-        //     } else {
-        //         // every thing went well
-        //         if (req.file) {
-        //             let filename;
-        //             filename = post.photo;
-        //             if (filename) {
-        //                 fileRemover(filename);
-        //             }
-        //             post.photo = req.file.filename;
-        //             handleUpdatePostData(req.body.document);
-        //         } else {
-        //             let filename;
-        //             filename = post.photo;
-        //             post.photo = "";
-        //             fileRemover(filename);
-        //             handleUpdatePostData(req.body.document);
-        //         }
-        //     }
-        // });
+
     } catch (error) {
         next(error);
     }

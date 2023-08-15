@@ -8,7 +8,7 @@ import { errorResponseHandler, invalidRouteHandler } from "./middleware/errorHan
 //Routes
 import userRoutes from "./routes/userRoutes";
 import postRoutes from "./routes/postRoutes";
-// import commentRoutes from "./routes/commentRoutes";
+
 
 dotenv.config();
 connectDB();
@@ -23,10 +23,7 @@ app.get("/", (req, res) => {
 
 app.use("/api/users", userRoutes);
 app.use("/api/posts", postRoutes);
-// app.use("/api/comments", commentRoutes);
 
-//static assets 
-// app.use("/uploads", express.static(path.join(__dirname, "/uploads")));
 
 app.use(invalidRouteHandler);
 app.use(errorResponseHandler);

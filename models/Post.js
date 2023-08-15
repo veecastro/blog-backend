@@ -12,16 +12,7 @@ const PostSchema = new Schema({
 
 }, { timestamps: true, toJSON: { virtuals: true } });
 
-//mongoose virtuals populate
-PostSchema.virtual('comments', {
-    //ref to comment model
-    ref: 'Comment',
-    //mongodb creates id for each schema
-    localField: '_id',
-    //get post comments
-    foreignField: 'post',
 
-});
 
 const Post = model('Post', PostSchema);
 export default Post;
