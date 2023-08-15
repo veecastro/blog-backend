@@ -18,6 +18,7 @@ const registerUser = async (req, res, next) => {
             _id: user._id,
             name: user.name,
             email: user.email,
+            verfiied: user.verified,
             admin: user.admin,
             token: await user.generateJWT(),
         });
@@ -40,6 +41,7 @@ const loginUser = async (req, res, next) => {
                 _id: user._id,
                 name: user.name,
                 email: user.email,
+                verfiied: user.verified,
                 admin: user.admin,
                 token: await user.generateJWT(),
             });
@@ -94,6 +96,7 @@ const updateProfile = async (req, res, next) => {
             _id: updatedUserProfile._id,
             name: updatedUserProfile.name,
             email: updatedUserProfile.email,
+            verfiied: updatedUserProfile.verified,
             admin: updatedUserProfile.admin,
             token: await updatedUserProfile.generateJWT(),
         });
